@@ -4,6 +4,7 @@
 
 #ifndef SECURE_TOURISM_DB_SYSTEM_SEARCHMANAGER_H
 #define SECURE_TOURISM_DB_SYSTEM_SEARCHMANAGER_H
+
 #include "Record.h"
 #include "Database.h"
 #include "EncryptionManager.h"
