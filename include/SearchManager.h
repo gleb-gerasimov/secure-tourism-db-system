@@ -7,22 +7,28 @@
 
 #include "Record.h"
 #include "Database.h"
-#include "EncryptionManager.h"
 
 
 class SearchManager {
 public:
-    SearchManager(Database* database, EncryptionManager* encryptionManager);
+    explicit SearchManager(Database* database);
 
-    [[nodiscard]] QVector<Record> findByDateRange(const QString& start, const QString& end) const;
-    [[nodiscard]] QVector<Record> findByType(const QString& type) const;
-    [[nodiscard]] QVector<Record> findByCountry(const QString& country) const;
+    [[nodiscard]] QVector<Record> findTours(
+        const std::optional<QDate>& startDate,
+        const std::optional<QDate>& endDate,
+        const std::optional<QString>& country,
+        const std::optional<QString>& type
+    ) const;
+
+    [[nodiscard]] double getAverageDailyCost(
+        const QString& country,
+        const QString& type
+    ) const;
 
 private:
     Database* m_database;
-    EncryptionManager* m_encryptionManager;
 };
 
 
 
-#endif //SECURE_TOURISM_DB_SYSTEM_SEARCHMANAGER_H
+#endif // SECURE_TOURISM_DB_SYSTEM_SEARCHMANAGER_H
