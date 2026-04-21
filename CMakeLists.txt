@@ -3,6 +3,8 @@ project(secure_tourism_db_system)
 
 set(CMAKE_CXX_STANDARD 20)
 
+find_package(Qt6 REQUIRED COMPONENTS Core Sql)
+
 add_executable(secure_tourism_db_system main.cpp
         src/Client.cpp
         include/Client.h
@@ -16,4 +18,9 @@ add_executable(secure_tourism_db_system main.cpp
         include/EncryptionManager.h
         src/Record.cpp
         include/Record.h
+)
+
+target_link_libraries(secure_tourism_db_system
+        Qt6::Core
+        Qt6::Sql
 )
