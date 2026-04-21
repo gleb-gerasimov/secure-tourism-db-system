@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Sql)
 
-add_executable(secure_tourism_db_system main.cpp
+add_executable(secure_tourism_db_system src/main.cpp
         src/Database.cpp
         include/Database.h
         src/SearchManager.cpp
