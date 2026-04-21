@@ -6,23 +6,24 @@
 #define SECURE_TOURISM_DB_SYSTEM_RECORD_H
 
 #include <QDate>
-
+#include <QString>
+#include <QByteArray>
 
 struct Record {
     int id;
 
-    QString fullName;
-    QString homeAddress;
-    QString phoneNumber;
+    QByteArray fullNameEncrypted;
+    QByteArray homeAddressEncrypted;
+    QByteArray phoneNumberEncrypted;
+
+    QByteArray hotelNameEncrypted;
+    QByteArray hotelAddressEncrypted;
 
     QDate startDate;
     QDate endDate;
 
     QString type;
     QString country;
-
-    QString hotelName;
-    QString hotelAddress;
 
     bool hasFlight;
 
@@ -35,6 +36,4 @@ struct Record {
     QString countryHash;
 };
 
-
-
-#endif //SECURE_TOURISM_DB_SYSTEM_RECORD_H
+#endif // SECURE_TOURISM_DB_SYSTEM_RECORD_H
