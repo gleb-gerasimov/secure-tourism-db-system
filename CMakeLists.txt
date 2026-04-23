@@ -21,7 +21,7 @@ add_executable(secure_tourism_db_system src/main.cpp
         include/Controller.h
         include/mainwindow.h
         src/mainwindow.cpp
-        forms/mainwindow.ui
+        forms/MainWindow.ui
 )
 
 target_include_directories(secure_tourism_db_system PRIVATE include)
