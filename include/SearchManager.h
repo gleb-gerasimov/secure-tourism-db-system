@@ -5,9 +5,12 @@
 #ifndef SECURE_TOURISM_DB_SYSTEM_SEARCHMANAGER_H
 #define SECURE_TOURISM_DB_SYSTEM_SEARCHMANAGER_H
 
-#include "Record.h"
-#include "Database.h"
+#include "../include/Record.h"
 
+#include <optional>
+
+
+class Database;
 
 class SearchManager {
 public:
@@ -28,7 +31,5 @@ public:
 private:
     Database* m_database;
 };
-
-
 
 #endif // SECURE_TOURISM_DB_SYSTEM_SEARCHMANAGER_H
