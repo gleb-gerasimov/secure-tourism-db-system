@@ -20,7 +20,10 @@ public:
         const std::optional<QDate>& startDate,
         const std::optional<QDate>& endDate,
         const std::optional<QString>& country,
-        const std::optional<QString>& type
+        const std::optional<QString>& type,
+        const std::optional<bool>& hasFlight,
+        const std::optional<int>& participants,
+        const std::optional<double>& price
     ) const;
 
     [[nodiscard]] double getAverageDailyCost(
