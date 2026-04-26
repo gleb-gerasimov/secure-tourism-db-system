@@ -7,8 +7,10 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Sql Widgets)
+find_package(OpenSSL REQUIRED)
 
-add_executable(secure_tourism_db_system src/main.cpp
+add_executable(secure_tourism_db_system
+        src/main.cpp
         src/Database.cpp
         include/Database.h
         src/SearchManager.cpp
@@ -23,10 +25,16 @@ add_executable(secure_tourism_db_system src/main.cpp
         forms/MainWindow.ui
 )
 
-target_include_directories(secure_tourism_db_system PRIVATE include)
+target_include_directories(
+        secure_tourism_db_system
+        PRIVATE include
+)
 
-target_link_libraries(secure_tourism_db_system
+target_link_libraries(
+        secure_tourism_db_system
+        PRIVATE
         Qt6::Core
         Qt6::Sql
         Qt6::Widgets
+        OpenSSL::Crypto
 )
