@@ -5,14 +5,15 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
+#include "../include/Record.h"
+
 #include <QVector>
 #include <QString>
 #include <optional>
 
-#include "Record.h"
-#include "Database.h"
-#include "SearchManager.h"
 
+class Database;
+class SearchManager;
 
 class Controller {
 public:
@@ -24,14 +25,10 @@ public:
         const std::optional<QDate>& startDate,
         const std::optional<QDate>& endDate,
         const std::optional<QString>& country,
-        const std::optional<QString>& type
-    ) const;
-
-    [[nodiscard]] QVector<Record> findTours(
-        const QDate& startDate,
-        const QDate& endDate,
-        const QString& country,
-        const QString& type
+        const std::optional<QString>& type,
+        const std::optional<bool>& hasFlight,
+        const std::optional<int>& participants,
+        const std::optional<double>& price
     ) const;
 
     [[nodiscard]] double getAverageDailyCost(
