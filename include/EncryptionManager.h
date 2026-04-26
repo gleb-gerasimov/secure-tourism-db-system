@@ -10,18 +10,12 @@
 
 class EncryptionManager {
 public:
-    EncryptionManager();
-    ~EncryptionManager();
-
-    [[nodiscard]] QByteArray encrypt(const QString& plainText) const;
-    [[nodiscard]] QString decrypt(const QByteArray& data) const;
+    [[nodiscard]] static QByteArray encrypt(const QString& plainText);
+    [[nodiscard]] static QString decrypt(const QByteArray& encryptedData);
 
 private:
-    QByteArray m_key;
-
-    [[nodiscard]] QByteArray generateIV() const;
-
-    void initialize();
+    [[nodiscard]] static QByteArray key();
+    [[nodiscard]] static QByteArray generateIV();
 };
 
 #endif // SECURE_TOURISM_DB_SYSTEM_ENCRYPTIONMANAGER_H
