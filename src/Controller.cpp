@@ -12,6 +12,10 @@ Controller::Controller(Database* database, SearchManager* searchManager)
       m_searchManager(searchManager) {
 }
 
+bool Controller::addRecord(const Record& record) const {
+    return m_database->addRecord(record);
+}
+
 QVector<Record> Controller::getAllRecords() const {
     return m_database->getAllRecords();
 }
