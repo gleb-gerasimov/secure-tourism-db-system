@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="addRecordTab">
        <attribute name="title">
@@ -263,7 +263,76 @@
            </layout>
           </item>
           <item>
-           <widget class="QTableWidget" name="tableTableWidget"/>
+           <widget class="QTableWidget" name="tableTableWidget">
+            <property name="columnCount">
+             <number>13</number>
+            </property>
+            <column>
+             <property name="text">
+              <string>id</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Полное имя</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Домашний адресс</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Телефонный номер</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Название отеля</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Адресс отеля</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Дата начала</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Дата конца</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Вид</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Страна</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Авиаперелёт</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Кол-во участников</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Цена билета</string>
+             </property>
+            </column>
+           </widget>
           </item>
          </layout>
         </item>
