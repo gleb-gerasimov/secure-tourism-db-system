@@ -76,7 +76,7 @@ double SearchManager::getAverageDailyCost(const QString &country, const QString 
 
             qint64 days = record.startDate.daysTo(record.endDate);
 
-            totalCost += record.price / static_cast<double>(days);
+            totalCost += record.price / (static_cast<double>(days) + 1);
 
             ++count;
         }
