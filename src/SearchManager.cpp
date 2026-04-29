@@ -68,19 +68,25 @@ double SearchManager::getAverageDailyCost(const QString &country, const QString 
 
     QVector<Record> records = m_database->getAllRecords();
 
-    double totalCost = 0.0;
+    double totalCostPerPersonPerDay = 0.0;
     int count = 0;
 
     for (const Record &record: records) {
         if (record.country == country && record.type == type) {
 
-            qint64 days = record.startDate.daysTo(record.endDate);
+            qint64 days = record.startDate.daysTo(record.endDate) + 1;
 
-            totalCost += record.price / (static_cast<double>(days) + 1);
+            if (days <= 0 || record.participants <= 0) {
+                continue;
+            }
+
+            const double costPerPersonPerDay = record.price / static_cast<double>(days * record.participants);
+
+            totalCostPerPersonPerDay += costPerPersonPerDay;
 
             ++count;
         }
     }
 
-    return totalCost / count;
+    return count > 0 ? totalCostPerPersonPerDay / count : 0.0;
 }
