@@ -1,6 +1,6 @@
 ## Overview
-
-## Features
+Desktop application for managing a tourism agency database built with C++, Qt and SQLite.
+The application allows users to store, edit and search information about clients, tours and hotels through a graphical user interface.
 
 ## Build
 ```bash
