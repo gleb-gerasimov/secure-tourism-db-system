@@ -13,7 +13,6 @@ QVector<Record> SearchManager::findTours(const std::optional<QDate> &startDate, 
                                          const std::optional<QString> &hasFlight,
                                          const std::optional<int> &participants,
                                          const std::optional<double> &price) const {
-
     QVector<Record> result;
 
     QVector<Record> records = m_database->getAllRecords();
@@ -65,7 +64,6 @@ QVector<Record> SearchManager::findTours(const std::optional<QDate> &startDate, 
 }
 
 double SearchManager::getAverageDailyCost(const QString &country, const QString &type) const {
-
     QVector<Record> records = m_database->getAllRecords();
 
     double totalCostPerPersonPerDay = 0.0;

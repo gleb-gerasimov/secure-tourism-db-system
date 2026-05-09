@@ -36,7 +36,6 @@ void MainWindow::addRecord() {
 }
 
 void MainWindow::findTours() {
-
     std::optional<QDate> startDate;
     std::optional<QDate> endDate;
 
@@ -94,7 +93,6 @@ void MainWindow::calculateAverageCost() {
 }
 
 void MainWindow::loadRecords(const QVector<Record> &records) const {
-
     ui->tableTableWidget->clearContents();
 
     ui->tableTableWidget->setRowCount(records.size());
